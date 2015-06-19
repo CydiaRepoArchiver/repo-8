@@ -28,6 +28,10 @@ body
 #info
 {
 }
+#code
+{
+    width: 640px;
+}
 h1
 {
     font-style: oblique;

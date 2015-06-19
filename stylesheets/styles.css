@@ -28,8 +28,9 @@ body
 #info
 {
 }
-#code
+iframe
 {
+    border: 1px solid aqua;
     width: 640px;
 }
 h1
@@ -47,6 +48,7 @@ h2
 }
 h3
 {
+    color: #00dddd;
     text-shadow: 0px 1px 0px #000000;
 }
 a

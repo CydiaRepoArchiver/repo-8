@@ -1,13 +1,13 @@
-/**** Version 1, 6/13/25 ****/
+/**** Version 2, 6/18/25 ****/
 function data() {
     var d = new Date();
     //Arrays
     var a_mon = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var a_d = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    var a_d = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var a_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var a_day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    var a_day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     //Day number, short name, full name
-    var day = d.getDate();
+    var day = d.getDay();
     var weekDayAbbrev = a_d[day];
     var weekDayFull = a_day[day];
     //Month number, short name, full name
@@ -21,18 +21,19 @@ function data() {
     var h24 = d.getHours();
     var ampm = h24 > 12 ? "PM" : "AM";
     var h12 = h24 > 12 ? h24 - 12 : h24;
-    var h = h12;
+    var h = h12 <= 0 ? 12 : h12;
+    h = clock24Hours ? h24 : h;
+    h = clockLeadingZero ? (h < 10 ? "0" + h : h) : h;
     var m = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
     var s = d.getSeconds();
-    /**** Format |1) HH:MM:SS |2) HH:MM |3)  HH:MM:SS AM |4) HH:MM AM |5) MM/DD/YY |6) Mon. Jan 1, 1970 |7) Monday. January 1, 1970
-     **** ElementId |1) HMS |2) HM |3) HMSampm |4) HMampm |5)  numMDY |6) fullDateAbbrev |7) fullDateLong  ****/
     //document.getElementById("HMS").innerHTML = h + ":" + m + ":" + s;
-    document.getElementById("HM").innerHTML = h + ":" + m;
-    document.getElementById("HMSampm").innerHTML = h + ":" + m + ":" + s + " " + ampm;
-    document.getElementById("HMampm").innerHTML = h + ":" + m + " " + ampm;
-    document.getElementById("numMDY").innerHTML = month + "/" + day + "/" + year2D;
-    document.getElementById("fullDateAbbrev").innerHTML = weekDayAbbrev + ". " + monthAbbrev + " " + day + ", " + year;
-    document.getElementById("fullDateLong").innerHTML = weekDayFull + ". " + monthFull + " " + day + ", " + year;
+    //document.getElementById("HM").innerHTML = h + ":" + m;
+    //document.getElementById("HMSampm").innerHTML = h + ":" + m + ":" + s + " " + ampm;
+    //document.getElementById("HMampm").innerHTML = h + ":" + m + " " + ampm;
+    //document.getElementById("numMDY").innerHTML = month + "/" + day + "/" + year2D;
+    //document.getElementById("fullDateAbbrev").innerHTML = weekDayAbbrev + ". " + monthAbbrev + " " + day + ", " + year;
+    //document.getElementById("fullDateLong").innerHTML = weekDayFull + ". " + monthFull + " " + day + ", " + year;
+    //document.getElementById("day").innerHTML = weekDayFull;
     
 }
 setInterval(data, 1000);

@@ -32,6 +32,9 @@ iframe
 {
     border: 1px solid aqua;
     width: 640px;
+    height: 320px;
+    resize: both;
+    overflow: auto;
 }
 h1
 {

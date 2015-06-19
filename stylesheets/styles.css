@@ -25,24 +25,34 @@ body
     margin-right: auto;
     text-align: center;
 }
+#info
+{
+}
 h1
 {
     font-style: oblique;
     font-weight: 300;
     color: #00cccc;
+    text-shadow: 0px 1px 0px #000000;
 }
 h2
 {
     color: #00dddd;
     font-style: oblique;
+    text-shadow: 0px 1px 0px #444444;
+}
+h3
+{
+    text-shadow: 0px 1px 0px #000000;
 }
 a
 {
     font-style: normal;
+    text-decoration: none;
+    color: cyan;
 }
 ul
 {
-    list-style-position: inside;
-    list-style-type: square;
+    list-style: inside none;
 }
 

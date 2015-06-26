@@ -9,7 +9,7 @@ function data() {
         var splitText = text.split(": ")[1];
         var percent = splitLine[0].splitText;
         var plugged = splitLine[1].splitText;
-        document.getElementById("battery").innerHTML = percent + "%" + " " + plugged;
+        document.getElementById("battery").innerHTML = text;//percent + "%" + " " + plugged;
     }
     stats.send();
 }

@@ -4,7 +4,6 @@ function data() {
     stats.open("GET", "scripts/BatteryStats.txt"/*"file:///var/mobile/Library/Stats/BatteryStats.txt"*/, true);
     //if (stats.readyState === 4 && (stats.status === 0 || stats.status === 200))
     {
-        alert("passed");
         var text = stats.responseText;
         var splitLine = text.split("/n");
         var splitText = text.split(": ")[1];

@@ -1,7 +1,7 @@
 /**** Version 1, 6/13/15 ****/
 function data() {
     var stats = new XMLHttpRequest();
-    stats.open("GET", "/scripts/BatteryStats.txt"/*"file:///var/mobile/Library/Stats/BatteryStats.txt"*/, true);
+    stats.open("GET", "S0MECoder.github.io/repo/WEB/scripts/BatteryStats.txt"/*"file:///var/mobile/Library/Stats/BatteryStats.txt"*/, true);
     if (stats.readyState === 4 && (stats.status === 0 || stats.status === 200))
     {
         var text = stats.responseText;

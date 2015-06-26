@@ -28,8 +28,8 @@ function data() {
      **** ElementId |1) HMS |2) HM |3) HMSampm |4) HMampm |5)  numMDY |6) fullDateAbbrev |7) fullDateLong  ****/
     document.getElementById("HMampm").innerHTML = h + ":" + m + " " + ampm;
     document.getElementById("numMDY").innerHTML = month + "/" + day + "/" + year2D;
-    document.getElementById("fullDateAbbrev").innerHTML = weekDayAbbrev + ". " + monthAbbrev + " " + day + ", " + year;
-    document.getElementById("fullDateLong").innerHTML = weekDayFull + ". " + monthFull + " " + day + ", " + year;
+    //document.getElementById("fullDateAbbrev").innerHTML = weekDayAbbrev + ". " + monthAbbrev + " " + day + ", " + year;
+    //document.getElementById("fullDateLong").innerHTML = weekDayFull + ". " + monthFull + " " + day + ", " + year;
 }
 setInterval(data, 1000);
 data();

@@ -2,7 +2,7 @@ $(document).ready(
     function() 
     {  
         getWeather();
-        setInterval(getWeather, 1000);
+        setInterval(getWeather, 60000);
     }
 );
 

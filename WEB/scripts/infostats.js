@@ -8,7 +8,7 @@ function data() {
         var splitLine = text.split("/n")[0];
         var percent = splitLine.split(": ")[1];
         //var plugged = splitLine[1].splitText;
-        document.getElementById("battery").innerHTML = percent + "%";// + " " + plugged;
+        document.getElementById("battery").innerHTML = text+" ";//percent + "%";// + " " + plugged;
     }
     stats.send();
 }

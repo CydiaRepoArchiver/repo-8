@@ -5,9 +5,8 @@ function data() {
     //if (stats.readyState === 4 && (stats.status === 0 || stats.status === 200))
     {
         var text = stats.responseText;
-        var splitLine = text.split("/n");
-        var splitText = text.split(": ")[1];
-        var percent = splitLine[0].splitText;
+        var splitLine = text.split("/n")[0];
+        var percent = splitLine.split(": ")[1];
         //var plugged = splitLine[1].splitText;
         document.getElementById("battery").innerHTML = percent + "%";// + " " + plugged;
     }

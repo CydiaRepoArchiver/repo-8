@@ -2,7 +2,7 @@
 function data() {
     var stats = new XMLHttpRequest();
     stats.open("GET", "scripts/BatteryStats.txt"/*"file:///var/mobile/Library/Stats/BatteryStats.txt"*/, true);
-    if (stats.readyState === 4 && (stats.status === 0 || stats.status === 200))
+    //if (stats.readyState === 4 && (stats.status === 0 || stats.status === 200))
     {
         alert("passed");
         var text = stats.responseText;

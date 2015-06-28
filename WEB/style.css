@@ -15,6 +15,7 @@ body {
 }
 td
 {
+    text-shadow: 1px 1px #aaaaaa;
     margin: 2px;
     border: 1px solid white;
     color: black;

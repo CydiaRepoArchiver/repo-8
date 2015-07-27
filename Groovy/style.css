@@ -11,6 +11,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    color: #d5f1ee;
 }
 #above {
     margin-top: 20%;
@@ -37,5 +38,5 @@ body {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     border-radius: 25px 4px 25px 4px;
-    box-shadow: 0px 0px 10px #000 inset;
+    box-shadow: 0px 0px 10px #d5f1ee inset;
 }

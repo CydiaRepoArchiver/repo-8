@@ -63,7 +63,9 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-      function togetherDays() {
+      function togetherDays() { 
+          var got;
+          window.addEventListener('message', function(e) { got = e.data; });
         var request = gapi.client.calendar.events.list({
           'calendarId': 'c0q9af5kurkskthfrouifq8h10@group.calendar.google.com',
           'timeMin': (new Date()).toISOString(),
@@ -91,7 +93,7 @@
             days = now ? daysUntil(end) : daysUntil(start);
             plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
             output = days + plural;
-            message = now ? " to spend with " + name + " &hearts;" : " until you'll see " + name + " again &hearts;";
+            message = now ? " to spend with " + got + " &hearts;" : " until you'll see " + got + " again &hearts;";
             
             document.getElementById("days").innerHTML = output; 
             document.getElementById("message").innerHTML = message;

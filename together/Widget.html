@@ -65,7 +65,7 @@
        */
       function togetherDays() { 
           var got;
-          window.addEventListener('message', function(e) { got = e.data; });
+          window.addEventListener('message', function(e) { got = "trish" });
         var request = gapi.client.calendar.events.list({
           'calendarId': 'c0q9af5kurkskthfrouifq8h10@group.calendar.google.com',
           'timeMin': (new Date()).toISOString(),
@@ -94,7 +94,6 @@
             plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
             output = days + plural;
             message = now ? " to spend with " + got + " &hearts;" : " until you'll see " + got + " again &hearts;";
-            alert(message);
             document.getElementById("days").innerHTML = output; 
             document.getElementById("message").innerHTML = message;
         }

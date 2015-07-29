@@ -94,7 +94,7 @@
             plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
             output = days + plural;
             message = now ? " to spend with " + got + " &hearts;" : " until you'll see " + got + " again &hearts;";
-            alert(got);
+            alert(message);
             document.getElementById("days").innerHTML = output; 
             document.getElementById("message").innerHTML = message;
         }

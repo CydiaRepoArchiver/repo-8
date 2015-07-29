@@ -85,14 +85,13 @@
                 output,
                 plural,
                 message,
-                name,
-                got;
-            window.addEventListener('message', function(e) { got = "trish" });
+                name;
+            window.addEventListener('message', function(e) { document.getElementById("message").innerHTML = "trish"; });
             now = daysUntil(start) <= 0;
             days = now ? daysUntil(end) : daysUntil(start);
             plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
             output = days + plural;
-            message = now ? " to spend with " + got + " &hearts;" : " until you'll see " + got + " again &hearts;";
+            message = now ? " to spend with " + document.getElementById("message").innerHTML + " &hearts;" : " until you'll see " + document.getElementById("message").innerHTML + " again &hearts;";
             document.getElementById("days").innerHTML = output; 
             document.getElementById("message").innerHTML = message;
         }

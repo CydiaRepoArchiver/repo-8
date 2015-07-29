@@ -1,0 +1,131 @@
+<html>
+  <head>
+      <link rel = "stylesheet" href = "scripts/style.css"> 
+      <script type = "text/javascript" charset = "utf-8" src = "scripts/moment.min.js"></script>
+    <script type="text/javascript">
+      // Your Client ID can be retrieved from your project in the Google
+      // Developer Console, https://console.developers.google.com
+      var CLIENT_ID = '549312193485-icivbajlo11d85qq4o7bo3ul2ie3vgkd.apps.googleusercontent.com';
+
+      var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+
+      /**
+       * Check if current user has authorized this application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES,
+            'immediate': true
+          }, handleAuthResult);
+      }
+
+      /**
+       * Handle response from authorization server.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+        var authorizeDiv = document.getElementById('authorize-div');
+        if (authResult && !authResult.error) {
+          // Hide auth UI, then load client library.
+          authorizeDiv.style.display = 'none';
+          loadCalendarApi();
+        } else {
+          // Show auth UI, allowing the user to initiate authorization by
+          // clicking authorize button.
+          authorizeDiv.style.display = 'inline';
+        }
+      }
+
+      /**
+       * Initiate auth flow in response to user clicking authorize button.
+       *
+       * @param {Event} event Button click event.
+       */
+      function handleAuthClick(event) {
+        gapi.auth.authorize(
+          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+          handleAuthResult);
+        return false;
+      }
+
+      /**
+       * Load Google Calendar client library. List upcoming events
+       * once client library is loaded.
+       */
+      function loadCalendarApi() {
+        gapi.client.load('calendar', 'v3', togetherDays);
+      }
+
+      /**
+       * Print the summary and start datetime/date of the next ten events in
+       * the authorized user's calendar. If no events are found an
+       * appropriate message is printed.
+       */
+      function togetherDays() {
+        var request = gapi.client.calendar.events.list({
+          'calendarId': 'c0q9af5kurkskthfrouifq8h10@group.calendar.google.com',
+          'timeMin': (new Date()).toISOString(),
+          'showDeleted': false,
+          'singleEvents': true,
+          'maxResults': 10,
+          'orderBy': 'startTime'
+        });
+
+        request.execute(function(resp) {
+          var events = resp.items;
+        if (events.length > 0)
+        {
+            var event = events[0],
+                start = event.start.date,
+                end = event.end.date,
+                days,
+                now,
+                output,
+                plural,
+                message,
+                name;
+            
+            now = daysUntil(start) <= 0;
+            days = now ? daysUntil(end) : daysUntil(start);
+            plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
+            output = days + plural;
+            message = now ? " to spend with " + name + "&hearts;" : " until you'll see " + name + " again&hearts;";
+            
+            document.getElementById("days").innerHTML = output; 
+            document.getElementById("message").innerHTML = message;
+        }
+        else
+        {
+            document.getElementById('message').innerHTML = 'You guys need to plan something!';
+        }
+
+        });
+      }
+        function daysUntil(date) {
+            var d, t, u, s, n;
+            d = new Date().getTime();
+            s = date.split("-");
+            t = Date.UTC(s[0], s[1] - 1, s[2]);
+            u = Math.ceil((t - d)/86400000);
+            return u;
+        }
+
+
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+  </head>
+  <body>
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Google Calendar API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+    </div>
+      <div id="output"><div id = "days"></div><div id = "message"></div></div>
+  </body>
+</html>

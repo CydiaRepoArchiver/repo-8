@@ -1,14 +1,13 @@
 <html>
   <head>
       <link rel = "stylesheet" href = "scripts/style.css"> 
-      <script type = "text/javascript" charset = "utf-8" src = "scripts/moment.min.js"></script>
     <script type="text/javascript">
       // Your Client ID can be retrieved from your project in the Google
       // Developer Console, https://console.developers.google.com
       var CLIENT_ID = '549312193485-icivbajlo11d85qq4o7bo3ul2ie3vgkd.apps.googleusercontent.com';
 
       var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
-
+        var name = "Trish";
       /**
        * Check if current user has authorized this application.
        */
@@ -92,7 +91,7 @@
             days = now ? daysUntil(end) : daysUntil(start);
             plural = days > 1 ? " days&nbsp;" : " day&nbsp;";
             output = days + plural;
-            message = now ? " to spend with " + name + "&hearts;" : " until you'll see " + name + " again&hearts;";
+            message = now ? " to spend with " + name + " &hearts;" : " until you'll see " + name + " again &hearts;";
             
             document.getElementById("days").innerHTML = output; 
             document.getElementById("message").innerHTML = message;

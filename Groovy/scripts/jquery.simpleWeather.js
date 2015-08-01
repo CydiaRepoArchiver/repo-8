@@ -9,6 +9,7 @@
       return Math.round((9.0/5.0)*temp+32.0);
     }
   }
+    
   $.extend({
     simpleWeather: function(options){
       options = $.extend({

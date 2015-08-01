@@ -2,41 +2,49 @@ html {
 }
 @font-face
 {
-    font-family: "Walkway";
-    src: url("fonts/Walkway_SemiBold.ttf");
+    font-family: "RL";
+    src: url("fonts/Roboto-light.ttf");
+}
+@font-face
+{
+    font-family: "RR";
+    src: url("fonts/Roboto-Regular.ttf");
 }
 body {
-    font-family: "Walkway";
-    position: relative;
+    font-family: "RL";
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: #d5f1ee;
+    color: #1cdada;
 }
-#above {
-    margin-top: 20%;
-}
-#below {
-}
-#above, #below {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 16px;
-    font-weight: 900;
-    opacity: 0.0;
-    transition: opacity 1s ease-in-out;
+#container {
+    position: absolute;
+    top: 15%;
+    height: 40px;
+    width: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(205, 220, 255, 1.0); /*#FF6400*/
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    transition: width .75s ease-in-out,
+                height .75s ease-in-out,
+                background-color .75s ease-in-out;
 }
 #time {
     margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 250px;
-    font-size: 50px;
-    text-shadow: 0px 0px 5px #777777;
-    -webkit-transform: skew(-20deg);
-    -moz-transform: skew(-20deg);
-    -o-transform: skew(-20deg);
-    border-radius: 25px 4px 25px 4px;
-    box-shadow: 0px 0px 10px #d5f1ee inset;
+    font-size: 32px;
+    color: rgba(70, 70, 70, 1.0);
+    transition: opacity .1s ease-in-out;
+}
+#info {
+    margin-top: 2px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1.0);
+    transition: opacity .1s ease-in-out;
+}
+table {
+    font-family: "RR";
+    color: white;
+    border-spacing: 0px 5px;
 }

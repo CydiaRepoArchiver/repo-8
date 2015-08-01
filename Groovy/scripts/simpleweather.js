@@ -1,3 +1,4 @@
+var html;
 $(document).ready(
     function() 
     {  
@@ -11,10 +12,10 @@ function getWeather() {
     location: cityName,
     unit: tempUnits,
     success: function(weather) {
-        document.getElementById("below").innerHTML = weather.temp + "&deg" + weather.units.temp + "&nbsp";// + groovyapi.getBatteryLevel() + "%";
+        html = '<table><tr> <td colspan = "2">' + weather.city + '</td> <td>' + weather.temp + '&deg' + weather.units.temp + '</td> </tr> <tr> <td colspan = "2">' + weather.currently + '</td> <td>' + /*groovyapi.getBatteryLevel +*/ '</td> </tr></table>';
     },
     error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
+        html = '"<p>"+error+"</p>"';
     }
   });
 }

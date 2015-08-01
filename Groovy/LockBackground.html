@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>LS Wavy - By /u/S0MECoder</title>
+        <title>LS Transform - By /u/S0MECoder</title>
         <link rel = "stylesheet" href = "style.css">
         <script type = "text/javascript" charset = "utf-8" src = "config.js"></script>
         <script type = "text/javascript" charset = "utf-8" src = "scripts/jquery-2.1.4.min.js"></script>
@@ -8,9 +8,12 @@
         <script type = "text/javascript" charset = "utf-8" src = "scripts/simpleweather.js"></script>
         <script type = "text/javascript" charset = "utf-8" src = "scripts/clock.js"></script>
     </head>
-    <body>
-        <div id = "above"></div>
-        <div id = "time" onclick = "clicked(true)"></div>
-        <div id = "below"></div>
+    <body onload = "init()">
+        <div id = "container">
+        <div id = "content" onclick = "clickedOpen()">
+            <div id = "time"></div>
+            <div id = "info"></div>
+            </div>
+        </div>
     </body>
 </html>

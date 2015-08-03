@@ -29,7 +29,7 @@ function data() {
     /**** Format |1) HH:MM:SS |2) HH:MM |3)  HH:MM:SS AM |4) HH:MM AM |5) MM/DD/YY |6) Mon. Jan 1, 1970 |7) Monday. January 1, 1970
      **** ElementId |1) HMS |2) HM |3) HMSampm |4) HMampm |5)  numMDY |6) fullDateAbbrev |7) fullDateLong  ****/
     document.getElementById("time").innerHTML = open ? "" : hm;
-    document.getElementById("info").innerHTML = open ? "<div><a href = 'javascript:clickedClose()'><img align = 'left' src = 'x.png' height = '15' width = '15'></a><div align = 'right' style = 'margin-right:5%;font-size:19px;font-family:RR'>" + hm + "</div><table style = 'color:" + textColorInfo + ";border-top: 1px solid " + textColorInfo + ";'><tr><td colspan = '3' style = 'text-align: center'>" + weekDayAbbrev + ". " + monthAbbrev + " " + date + ", " + year + "</td></tr>" + html + "</div>": "";
+    document.getElementById("info").innerHTML = open ? "<div><a href = 'javascript:clickedClose()' style = '-webkit-tap-highlight-color: rgba(0, 0, 0, 0);'><img align = 'left' src = 'x.png' height = '15' width = '15' style = '-webkit-tap-highlight-color: rgba(0, 0, 0, 0);'></a><div align = 'right' style = 'margin-right:5%;font-size:19px;font-family:RR'>" + hm + "</div><table style = 'color:" + textColorInfo + ";border-top: 1px solid " + textColorInfo + ";'><tr><td colspan = '3' style = 'text-align: center'>" + weekDayAbbrev + ". " + monthAbbrev + " " + date + ", " + year + "</td></tr>" + html + "</div>": "";
 }
 setInterval(data, 1000);
 data();

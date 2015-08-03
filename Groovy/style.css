@@ -21,6 +21,7 @@ body {
     margin-right: auto;
     height: 40px;
     width: 105px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: width .75s ease-in-out,
                 height .75s ease-in-out,
                 background-color .75s ease-in-out;

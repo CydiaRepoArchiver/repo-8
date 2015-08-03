@@ -1,3 +1,12 @@
-var cityName = 'San Diego';
-var tempUnits = 'f';
-var clockLeadingZero = false;
+var cityName = "San Diego"; //Name of city or neighborhood for weather
+var tempUnits = "f"; //Farenheit, Celcius; Whatever you please.
+var clockLeadingZero = false; //04:35 or 4:35?
+var position = "15%"; //Position from top of screen: 15%, 90px
+var backgroundColorTime = "rgba(205, 220, 255, 0.9)"; //Background color for time view: rgba, rgb, webcolor name, or hex code.
+var backgroundColorInfo = "rgba(96, 159, 204, 0.9)"; //The first 3 parameters are red, green, and blue, 0-255, and the 4th is opacity, 0.0-1.0.
+var textColorTime = "rgba(70, 70, 70, 1.0)"; //A google search for web safe color names will give you show you colors you can use, this is similar to darkslategray.
+var textColorInfo = "rgba(255, 255, 255, 1.0)"; //Hex color codes are also accepted.
+var boxShadow = "2px 2px 2px rgba(0, 0, 0, 0.8)"; //pixels down, pixels right, blur pixels, color, inset or outset(default outset).
+var textShadowTime = "hidden" //If you want a text shadow you can copy the box shadow and change that to how you want it.
+var textShadowInfo = "hidden";
+var borderRadius = "4px"; //Border radius of time and info box

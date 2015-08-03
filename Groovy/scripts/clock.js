@@ -1,4 +1,3 @@
-/**** Version 1, 6/13/25 ****/
 var open;
 function data() {
     var d = new Date();
@@ -30,7 +29,7 @@ function data() {
     /**** Format |1) HH:MM:SS |2) HH:MM |3)  HH:MM:SS AM |4) HH:MM AM |5) MM/DD/YY |6) Mon. Jan 1, 1970 |7) Monday. January 1, 1970
      **** ElementId |1) HMS |2) HM |3) HMSampm |4) HMampm |5)  numMDY |6) fullDateAbbrev |7) fullDateLong  ****/
     document.getElementById("time").innerHTML = open ? "" : hm;
-    document.getElementById("info").innerHTML = open ? "<div><a href = 'javascript:clickedClose()'><img src = 'x.png' height = '15' width = '15'></a>" + html + "</div>": "";
+    document.getElementById("info").innerHTML = open ? "<div><a href = 'javascript:clickedClose()'><img align = 'left' src = 'x.png' height = '15' width = '15'></a><div align = 'right' style = 'margin-right:5%;font-size:19px;font-family:RR'>" + hm + "</div><table style = 'color:" + textColorInfo + ";border-top: 1px solid " + textColorInfo + ";'><tr><td colspan = '3' style = 'text-align: center'>" + weekDayAbbrev + ". " + monthAbbrev + " " + date + ", " + year + "</td></tr>" + html + "</div>": "";
 }
 setInterval(data, 1000);
 data();
@@ -39,9 +38,9 @@ function clickedOpen() {
     var container = document.getElementById("container").style;
     var time = document.getElementById("time").style;
     var info = document.getElementById("info").style;
-    container.backgroundColor = "rgba(96, 159, 204, 1.0)";
-    container.width = 150;
-    container.height = 100;
+    container.backgroundColor = backgroundColorInfo;
+    container.width = 200;
+    container.height = 150;
     time.opacity = 0.0;
     info.opacity = 1.0;
     open = true;
@@ -50,8 +49,8 @@ function clickedClose() {
     var container = document.getElementById("container").style;
     var time = document.getElementById("time").style;
     var info = document.getElementById("info").style;
-    container.backgroundColor = "rgba(205, 220, 255, 1.0)";
-    container.width = 95;
+    container.backgroundColor = backgroundColorTime;
+    container.width = 105;
     container.height = 40;
     time.opacity = 1.0;
     info.opacity = 0.0;
@@ -60,6 +59,20 @@ function clickedClose() {
 
 function init() {
     open = false;
+    applyPrefs();
+}
+function applyPrefs() {
+    var container = document.getElementById("container").style;
+    var time = document.getElementById("time").style;
+    var info = document.getElementById("info").style;
+    container.marginTop = position;
+    container.borderRadius = borderRadius;
+    container.boxShadow = boxShadow;
+    container.backgroundColor = backgroundColorTime;
+    time.color = textColorTime;
+    info.color = textColorInfo;
+    time.textShadow = textShadowTime;
+    info.textShadow = textShadowInfo;
 }
 
 /**** Written by /u/S0MECoder. Modify the code all you want but please leave this comment intact. PM me on Reddit if you release this code or a modified version so I can check out what you've made! ****/

@@ -8,5 +8,5 @@ var textColorTime = "rgba(70, 70, 70, 1.0)"; //A google search for web safe colo
 var textColorInfo = "rgba(255, 255, 255, 1.0)"; //Hex color codes are also accepted.
 var boxShadow = "2px 2px 2px rgba(0, 0, 0, 0.8)"; //pixels down, pixels right, blur pixels, color, inset or outset(default outset).
 var textShadowTime = "hidden" //If you want a text shadow you can copy the box shadow and change that to how you want it.
-var textShadowInfo = "hidden";
+var textShadowInfo = "1px 1px 1px rbga(0, 0, 0, 0.7)";
 var borderRadius = "4px"; //Border radius of time and info box

@@ -71,8 +71,6 @@ function applyPrefs() {
     container.backgroundColor = backgroundColorTime;
     time.color = textColorTime;
     info.color = textColorInfo;
-    time.textShadow = textShadowTime;
-    info.textShadow = textShadowInfo;
 }
 
 /**** Written by /u/S0MECoder. Modify the code all you want but please leave this comment intact. PM me on Reddit if you release this code or a modified version so I can check out what you've made! ****/

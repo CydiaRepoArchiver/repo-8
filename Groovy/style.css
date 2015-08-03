@@ -48,4 +48,5 @@ table {
     font-family: "RR";
     width: 90%;
     height: 80%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }

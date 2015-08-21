@@ -1,12 +1,10 @@
 html {
 }
-@font-face
-{
+@font-face {
     font-family: "RL";
     src: url("fonts/Roboto-Light.ttf");
 }
-@font-face
-{
+@font-face {
     font-family: "RR";
     src: url("fonts/Roboto-Regular.ttf");
 }
@@ -15,38 +13,41 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-#container {
-    margin-left: auto;
-    margin-right: auto;
-    height: 40px;
-    width: 105px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transition: width .75s ease-in-out,
-                height .75s ease-in-out,
-                background-color .75s ease-in-out;
-}
-#time {
-    margin-top: 2px;
+    color: darkslategray;
     font-size: 36px;
-    transition: opacity .1s ease-in-out;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
 }
-#info {
-    margin-top: 2px;
-    font-size: 16px;
-    transition: opacity .1s ease-in-out;
+#weather {
+    width: 100%;
 }
-img {
-    margin-top: 4px;
-    margin-left: 4px;
-    margin-bottom: 4px;
-}
-table {
-    margin-left: auto;
-    margin-right: auto;
+
+#city {
+    font-size: 36px;
     font-family: "RR";
-    width: 90%;
-    height: 80%;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#city1 {
+    text-align: left;
+}
+#city2 {
+    text-align: right;
+}
+
+#temp {
+    font-size: 18px;
+}
+#temp1 {
+    text-align: left;
+}
+#temp2 {
+    text-align: right;
+}
+
+#word {
+    font-size: 24px;
+}
+#word1 {
+    text-align: left;
+}
+#word2 {
+    text-align: right;
 }

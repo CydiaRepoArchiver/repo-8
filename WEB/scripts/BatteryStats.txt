@@ -1,2 +1,0 @@
-Level: 100
-State: Charging
